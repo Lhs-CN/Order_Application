@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         OkHttpClient client=new OkHttpClient();
 
 //        Request request=new Request.Builder().url(Constants.WEB_SITE+Constants.REQUEST_SHOP_DATA).build();
-        Request request=new Request.Builder().url("http://192.168.254.1:3000/order/"+Constants.REQUEST_SHOP_DATA).build();
+        Request request=new Request.Builder().url(Constants.WEB_SITE+Constants.REQUEST_SHOP_DATA).build();
         Call call=client.newCall(request);
         call.enqueue(new Callback() {
             @Override

@@ -69,6 +69,14 @@ public class ShopAdapter extends BaseAdapter {
         viewHolder.tvShopName.setText(shopBean.getShopName());
         viewHolder.tvTime.setText("配送时长："+shopBean.getTime());
         viewHolder.tvOfferPrice.setText("配送费："+shopBean.getDistributionCost());
+
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         return convertView;
     }
     class ViewHolder{
