@@ -69,5 +69,6 @@ public class MainActivity extends AppCompatActivity {
         lvShopList=findViewById(R.id.lv_shop_list);
         adapter=new ShopAdapter(this);
         lvShopList.setAdapter(adapter);
+
     }
 }

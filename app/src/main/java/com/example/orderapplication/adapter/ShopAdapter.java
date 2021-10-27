@@ -70,7 +70,7 @@ public class ShopAdapter extends BaseAdapter {
         Log.i(TAG, "getView: "+shopBean.getShopPic());
         viewHolder.tvShopName.setText(shopBean.getShopName());
         viewHolder.tvTime.setText(shopBean.getTime());
-        viewHolder.tvOfferPrice.setText("配送费："+shopBean.getDistributionCost());
+        viewHolder.tvOfferPrice.setText("配送费：￥"+shopBean.getDistributionCost());
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override

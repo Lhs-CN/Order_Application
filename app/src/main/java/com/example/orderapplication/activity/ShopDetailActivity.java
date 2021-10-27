@@ -46,6 +46,7 @@ public class ShopDetailActivity extends AppCompatActivity implements View.OnClic
         ivBack=findViewById(R.id.iv_back);
 
         tvTitle.setText("店铺详情");
+        ivBack.setVisibility(View.VISIBLE);
         ivBack.setOnClickListener(this);
     }
 
