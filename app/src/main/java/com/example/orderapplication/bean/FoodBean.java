@@ -1,8 +1,9 @@
 package com.example.orderapplication.bean;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class FoodBean {
+public class FoodBean implements Serializable {
     private String foodId;
     private String foodName;
     private String taste;

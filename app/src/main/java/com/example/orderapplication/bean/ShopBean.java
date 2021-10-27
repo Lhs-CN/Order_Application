@@ -5,10 +5,11 @@ import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
 
 import android.util.Log;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class ShopBean {
+public class ShopBean implements Serializable {
 
 
     private int id;

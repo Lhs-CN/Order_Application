@@ -3,6 +3,7 @@ package com.example.orderapplication.adapter;
 import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.orderapplication.R;
+import com.example.orderapplication.activity.ShopDetailActivity;
 import com.example.orderapplication.bean.ShopBean;
 
 import java.util.ArrayList;
@@ -73,6 +75,9 @@ public class ShopAdapter extends BaseAdapter {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent(context, ShopDetailActivity.class);
+                intent.putExtra("shop",shopBean);
+                context.startActivity(intent);
 
             }
         });
