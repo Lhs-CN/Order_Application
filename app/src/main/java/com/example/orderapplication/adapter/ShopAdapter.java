@@ -69,7 +69,7 @@ public class ShopAdapter extends BaseAdapter {
         Glide.with(context).load(shopBean.getShopPic()).error(R.mipmap.ic_launcher).into(viewHolder.ivShopPic);
         Log.i(TAG, "getView: "+shopBean.getShopPic());
         viewHolder.tvShopName.setText(shopBean.getShopName());
-        viewHolder.tvTime.setText("配送时长："+shopBean.getTime());
+        viewHolder.tvTime.setText(shopBean.getTime());
         viewHolder.tvOfferPrice.setText("配送费："+shopBean.getDistributionCost());
 
         convertView.setOnClickListener(new View.OnClickListener() {
