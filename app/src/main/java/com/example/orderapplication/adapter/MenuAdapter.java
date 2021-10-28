@@ -20,8 +20,9 @@ public class MenuAdapter extends BaseAdapter {
 
     private Context context;
     private List<FoodBean> beans=new ArrayList<>();
-
-    public MenuAdapter(Context context) {
+    private OnSelectListener onSelectListener;
+    public MenuAdapter(Context context, OnSelectListener onSelectListener) {
+        this.onSelectListener=onSelectListener;
         this.context = context;
     }
 
@@ -68,13 +69,21 @@ public class MenuAdapter extends BaseAdapter {
         viewHolder.tvPrice.setText("￥"+String.valueOf(foodBean.getPrice()));
         viewHolder.tvTaste.setText(foodBean.getTaste());
         Glide.with(context).load(foodBean.getFoodPic()).error(R.mipmap.ic_launcher).into(viewHolder.ivFoodPic);
-
+        viewHolder.btnAddCar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { //加入购物车按钮的点击事件
+                onSelectListener.onSelectAddCar(position);
+            }
+        });
         return convertView;
     }
 
     class ViewHolder{
-        TextView tvFoodName,tvTaste,tvPrice;
-        ImageView ivFoodPic;
+        public TextView tvFoodName,tvTaste,tvPrice;
+        public ImageView ivFoodPic;
         public Button btnAddCar;
+    }
+    public interface OnSelectListener {
+        void onSelectAddCar (int position); //处理加入购物车按钮的方法
     }
 }

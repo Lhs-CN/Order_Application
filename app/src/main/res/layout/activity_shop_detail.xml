@@ -101,6 +101,9 @@
                     android:layout_alignParentBottom="true">
 
                 </ListView>
+                <include layout="@layout/car_list" />
+
+                <include layout="@layout/shop_car" />
 
             </RelativeLayout>
 

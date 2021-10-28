@@ -13,6 +13,12 @@
         android:theme="@style/Theme.OrderApplication"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.OrderActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.FoodActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.ShopDetailActivity"
             android:exported="true" />
         <activity

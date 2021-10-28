@@ -61,7 +61,7 @@
         android:text="购买"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:textSize="15sp"
+        android:textSize="14sp"
         android:background="@drawable/add_car_selector">
 
     </Button>
