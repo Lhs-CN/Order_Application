@@ -8,11 +8,16 @@
         <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/drawable/iv_back_selector.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/layout/activity_food.xml" value="0.171875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/layout/activity_main.xml" value="0.28940217391304346" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/layout/activity_order.xml" value="0.2625" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/layout/activity_shop_detail.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/layout/car.xml" value="0.178125" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/layout/car_item.xml" value="0.178125" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/layout/car_list.xml" value="0.178125" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/layout/manu_item.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/layout/order_head.xml" value="0.2625" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/layout/order_item.xml" value="0.2625" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/layout/payment.xml" value="0.2625" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/layout/qr_code.xml" value="0.2625" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/layout/shop_car.xml" value="0.178125" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/layout/shop_item.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/OrderApplication/app/src/main/res/layout/title_bar.xml" value="0.2765625" />

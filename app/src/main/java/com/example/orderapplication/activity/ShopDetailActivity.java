@@ -15,6 +15,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -32,19 +33,19 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ShopDetailActivity extends AppCompatActivity implements View.OnClickListener {
+    private static final String TAG = "Tag";
     public ShopBean bean;
-    public TextView tvShopName,tvTime,tvNotice,tvTitle,tvBack,
+    public TextView tvShopName,tvTime,tvNotice,tvTitle,
             tvSettleAccounts, tvCount, tvMoney, tvDistributionCost,
-            tvNotEnough, tvClear;;
+            tvNotEnough, tvClear;
     public ImageView ivShopPic,ivBack, ivShopCar;
     public ListView lvList,lvCar;
     public static final int MSG_COUNT_OK = 1;
     public MenuAdapter menuAdapter;
     private MHandler mHandler;
     private int totalCount = 0;
-    private BigDecimal totalMoney;            //购物车中菜品的总价格
-    private List<FoodBean> carFoodList;      //购物车中的菜品数据
-    private MenuAdapter adapter;
+    private BigDecimal totalMoney;
+    private List<FoodBean> carFoodList;
     private CarAdapter carAdapter;
     private RelativeLayout rlCarList;
 
@@ -66,7 +67,6 @@ public class ShopDetailActivity extends AppCompatActivity implements View.OnClic
         menuAdapter=new MenuAdapter(this, new MenuAdapter.OnSelectListener() {
             @Override
             public void onSelectAddCar(int position) {
-                //点击加入购物车按钮将菜添加到购物车中
                 FoodBean fb = bean.getFoodList().get(position);
                 fb.setCount(fb.getCount() + 1);
                 Iterator<FoodBean> iterator = carFoodList.iterator();
@@ -77,7 +77,7 @@ public class ShopDetailActivity extends AppCompatActivity implements View.OnClic
                     }
                 }
                 carFoodList.add(fb);
-                totalCount = totalCount + 1;
+                totalCount ++;
                 totalMoney = totalMoney.add(fb.getPrice());
                 carDataMsg();
             }
@@ -99,8 +99,10 @@ public class ShopDetailActivity extends AppCompatActivity implements View.OnClic
                         iterator.remove();
                     }
                 }
+                Log.i(TAG, "minusCarData: count="+String.valueOf(count));
+                Log.i(TAG, "minusCarData: position="+String.valueOf(position));
                 carFoodList.add(position, bean);
-                totalCount = totalCount + 1;
+                totalCount ++;
                 totalMoney = totalMoney.add(bean.getPrice());
                 carDataMsg();
             }
@@ -223,10 +225,15 @@ public class ShopDetailActivity extends AppCompatActivity implements View.OnClic
                 iterator.remove();
             }
         }
-        if (count > 0) carFoodList.add(position, bean);
+        Log.i(TAG, "minusCarData: count="+String.valueOf(count));
+        Log.i(TAG, "minusCarData: position="+String.valueOf(position));
+        if (count > 0) {
+            carFoodList.add(position, bean);
+        }
         else carAdapter.notifyDataSetChanged();
-        totalCount = totalCount - 1;
+        totalCount --;
         totalMoney = totalMoney.subtract(bean.getPrice());
+        carAdapter.setData(carFoodList);
         carDataMsg();
     }
 
@@ -259,7 +266,7 @@ public class ShopDetailActivity extends AppCompatActivity implements View.OnClic
                                 tvNotEnough.setVisibility(View.VISIBLE);
                                 BigDecimal m = bean.getOfferPrice().subtract(bdm);
                                 tvNotEnough.setText("还差￥" + m + "起送");
-                            } else { //总价格>=起送价格
+                            } else {
                                 tvSettleAccounts.setVisibility(View.VISIBLE);
                                 tvNotEnough.setVisibility(View.GONE);
                             }
@@ -275,8 +282,7 @@ public class ShopDetailActivity extends AppCompatActivity implements View.OnClic
                             tvNotEnough.setText("￥" + bean.getOfferPrice() + "起送");
                             tvCount.setVisibility(View.GONE);
                             tvDistributionCost.setVisibility(View.GONE);
-                            tvMoney.setTextColor(getResources().getColor(R.color.
-                                    light_gray));
+                            tvMoney.setTextColor(getResources().getColor(R.color.light_gray));
                             tvMoney.setText("未选购商品");
                         }
                     }

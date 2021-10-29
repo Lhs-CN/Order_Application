@@ -84,6 +84,6 @@ public class MenuAdapter extends BaseAdapter {
         public Button btnAddCar;
     }
     public interface OnSelectListener {
-        void onSelectAddCar (int position); //处理加入购物车按钮的方法
+        void onSelectAddCar (int position);
     }
 }
